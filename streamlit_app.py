@@ -1,11 +1,15 @@
 import streamlit as st
+import requests
 
+# Title of the app
 st.title("🎈 My new app")
+
+# Introductory text
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-    import requests
-import streamlit as st
+)
 
+# Function to get weather data
 def get_weather(city):
     api_key = "3c1d901aba98438bacb44730251302"  # API from weather API
     base_url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={city}&aqi=no"
@@ -40,5 +44,3 @@ if city_name:
             st.write(f"**{key}:** {value}")
     else:
         st.error(weather)
-
-)
