@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # API key for Gemini (or your respective chatbot API)
-API_KEY = "AIzaSyCQBO9kItOjFhooFJXPVGOtsxoWuufhoZk"
+API_KEY = "your_gemini_api_key_here"
 
 # Define the API endpoint
 API_URL = "https://api.gemini.com/chat"  # Replace with the correct Gemini API endpoint
@@ -16,18 +16,25 @@ def get_chatbot_response(message):
 
     # Create the payload based on API's expected format
     payload = {
-        "message": message
+        "message": message  # Update based on Gemini's expected format
     }
 
     # Send the request to the Gemini API
-    response = requests.post(API_URL, json=payload, headers=headers)
-
-    # Parse the response from the API
-    if response.status_code == 200:
+    try:
+        response = requests.post(API_URL, json=payload, headers=headers)
+        response.raise_for_status()  # Raise an error if the response is not successful
         data = response.json()
-        return data["response"]  # Adjust based on the API response format
-    else:
-        return "Sorry, I couldn't understand that."
+
+        # Print the response for debugging purposes
+        print("API Response:", data)
+        
+        if "response" in data:
+            return data["response"]  # Adjust based on the actual response format
+        else:
+            return "Sorry, I couldn't understand that."
+    except requests.exceptions.RequestException as e:
+        print("Error during API request:", e)
+        return "Sorry, there was an error with the chatbot service."
 
 # Streamlit UI setup
 st.title("Gemini Chatbot")
