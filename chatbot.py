@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # API key for Gemini (or your respective chatbot API)
-API_KEY = "AIzaSyCQBO9kItOjFhooFJXPVGOtsxoWuufhoZk"
+API_KEY = "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"
 
 # Define the API endpoint
 API_URL = "https://api.gemini.com/chat"  # Replace with the correct Gemini API endpoint
