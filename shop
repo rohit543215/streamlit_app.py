@@ -1,0 +1,31 @@
+import streamlit as st
+
+# Shop Details
+data = {
+    "Shop's Name": "Rohit Farsan",
+    "Address": "Uttam Nagar near Kaka Canteen, Pune 411023",
+    "Category": "Snacks and Bakery",
+    "Owner's Name": "Girish Joshi",
+    "Email": "gj2615059@gmail.com",
+    "Phone No": "9322431837",
+    "Image": "shop_image.jpg"  # Replace with actual image path
+}
+
+# Streamlit UI
+st.title("🛍️ Local Shop Details")
+st.image(data["Image"], caption=data["Shop's Name"], use_column_width=True)
+
+st.write("**Shop Name:**", data["Shop's Name"])
+st.write("**Address:**", data["Address"])
+st.write("**Category:**", data["Category"])
+st.write("**Owner:**", data["Owner's Name"])
+st.write("**Email:**", data["Email"])
+st.write("**Phone:**", data["Phone No"])
+
+# Contact Button
+if st.button("📞 Contact Owner"):
+    st.success(f"Calling {data['Owner\'s Name']} at {data['Phone No']}")
+
+# Footer
+st.markdown("---")
+st.markdown("Developed with ❤️ using Streamlit")
