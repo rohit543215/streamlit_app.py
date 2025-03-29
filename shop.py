@@ -7,7 +7,7 @@ shop_category = "Snacks and Bakery"
 owner_name = "Girish Joshi"
 owner_email = "gj2615059@gmail.com"
 owner_phone = "9322431837"
-shop_images = ["C:\Users\gj261\Pictures\Screenshots\Screenshot 2025-03-29 122406"]  # Replace with actual image paths
+shop_images = [r"C:\Users\gj261\Pictures\Screenshots\Screenshot 2025-03-29 122406"]  # Replace with actual image paths
 
 # Streamlit UI
 st.set_page_config(page_title=shop_name, page_icon="🍪", layout="wide")
