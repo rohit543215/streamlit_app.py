@@ -23,7 +23,7 @@ st.markdown("""
     }
     .subtitle {
         font-size: 1.4em;
-        color: #AAAAAA;
+        color: #cccccc;
         text-align: center;
         margin-bottom: 2rem;
     }
@@ -31,26 +31,27 @@ st.markdown("""
         font-size: 1.8em;
         font-weight: 700;
         margin-top: 2rem;
-        color: #01DFD7;
-        border-bottom: 2px solid #01DFD7;
+        color: #00CED1;
+        border-bottom: 2px solid #00CED1;
         padding-bottom: 5px;
     }
     .content {
-        font-size: 1.1em;
-        color: #DDDDDD;
+        font-size: 1.15em;
+        color: #ffffff;
         line-height: 1.7;
     }
     .contact-box {
-        border: 1px solid #01DFD7;
+        border: 1px solid #00CED1;
         padding: 1em;
         border-radius: 8px;
         margin-top: 1em;
         background-color: #1F2833;
+        color: #ffffff;
     }
     footer {
         text-align: center;
         font-size: 0.9em;
-        color: #666;
+        color: #888;
         margin-top: 3rem;
     }
     hr {
