@@ -3,11 +3,44 @@ import streamlit as st
 # Set page config
 st.set_page_config(page_title="Rvivera Consulting", layout="wide")
 
-# --- Top Navigation Header with Logo ---
+# --- Top Navbar with Sticky Header and Logo + Navigation Links ---
 st.markdown("""
-    <div style="background-color:#ffffff; padding: 10px 30px; display: flex; align-items: center;">
+    <style>
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #ffffff;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 30px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .nav-links a {
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: 600;
+        color: #0B0C10;
+        font-size: 1rem;
+    }
+    .nav-links a:hover {
+        color: #00CED1;
+    }
+    .spacer {
+        height: 70px; /* height of fixed navbar */
+    }
+    </style>
+    <div class="navbar">
         <img src="https://raw.githubusercontent.com/rohit543215/streamlit_app.py/main/ChatGPT Image Jul 2, 2025, 08_56_56 PM.png" alt="Rvivera Logo" height="40">
+        <div class="nav-links">
+            <a href="#About">About</a>
+            <a href="#Services">Services</a>
+            <a href="#Contact">Contact</a>
+        </div>
     </div>
+    <div class="spacer"></div>
 """, unsafe_allow_html=True)
 
 # --- Custom Styling ---
@@ -82,7 +115,7 @@ Welcome to <strong>Rvivera Consulting</strong>, where insights meet performance.
 """, unsafe_allow_html=True)
 
 # --- About Us Section ---
-st.markdown("<div class='section-title'>About Us</div>", unsafe_allow_html=True)
+st.markdown("<div class='section-title' id='About'>About Us</div>", unsafe_allow_html=True)
 st.markdown("""
 <div class='content'>
 Founded by <strong>Girish Joshi</strong>, Rvivera Consulting is a modern advisory firm helping individuals and small businesses make informed financial decisions in the stock market. With a blend of research, risk control, and strategy, we aim to simplify investing for all.
@@ -90,7 +123,7 @@ Founded by <strong>Girish Joshi</strong>, Rvivera Consulting is a modern advisor
 """, unsafe_allow_html=True)
 
 # --- Services Section ---
-st.markdown("<div class='section-title'>Our Services</div>", unsafe_allow_html=True)
+st.markdown("<div class='section-title' id='Services'>Our Services</div>", unsafe_allow_html=True)
 st.markdown("""
 <div class='content'>
 <ul>
@@ -102,7 +135,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Contact Section ---
-st.markdown("<div class='section-title'>Contact</div>", unsafe_allow_html=True)
+st.markdown("<div class='section-title' id='Contact'>Contact</div>", unsafe_allow_html=True)
 st.markdown("""
 <div class='contact-box'>
 <b>Name:</b> Girish Joshi<br>
