@@ -3,6 +3,9 @@ import streamlit as st
 # Set page config
 st.set_page_config(page_title="Rvivera Consulting", layout="centered")
 
+# Show logo
+st.image("rvivera_logo.png", width=200)
+
 # --- Styling ---
 st.markdown("""
     <style>
