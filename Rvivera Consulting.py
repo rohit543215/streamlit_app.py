@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Rvivera Consulting", layout="centered")
 
 # Show logo
-st.image("rvivera_logo.png", width=200)
+st.image("ChatGPT Image Jul 2, 2025, 08_56_56 PM.png", width=200)
 
 # --- Styling ---
 st.markdown("""
