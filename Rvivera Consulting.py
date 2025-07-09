@@ -35,8 +35,6 @@ st.markdown("""
     <div class="navbar">
         <img src="https://raw.githubusercontent.com/rohit543215/streamlit_app.py/main/ChatGPT Image Jul 2, 2025, 08_56_56 PM.png" alt="Rvivera Logo" height="40">
         <div class="nav-links">
-            <a href="#About">About</a>
-            <a href="#Services">Services</a>
             <a href="#Contact">Contact</a>
         </div>
     </div>
