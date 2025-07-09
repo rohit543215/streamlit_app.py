@@ -1,65 +1,75 @@
 import streamlit as st
 
 # Set page config
-st.set_page_config(page_title="Rvivera Consulting", layout="centered")
+st.set_page_config(page_title="Rvivera Consulting", layout="wide")
 
-# --- Show Logo ---
-st.image("ChatGPT Image Jul 2, 2025, 08_56_56 PM.png", width=150)
+# Show logo
+st.image("rvivera_logo.png", width=140)
 
 # --- Custom Styling ---
 st.markdown("""
     <style>
-    .main {
-        background-color: #000;
+    body {
+        background-color: #0c1a32;
         color: #ffffff;
         font-family: 'Segoe UI', sans-serif;
-        padding: 2rem;
     }
     .title {
-        font-size: 3.2em;
-        font-weight: 700;
-        color: #00ffcc;
+        font-size: 3em;
+        font-weight: 800;
+        color: #ffffff;
         text-align: center;
-        margin-bottom: 0.5em;
+        margin-top: 1rem;
     }
     .subtitle {
         font-size: 1.5em;
+        color: #a3d2ff;
         text-align: center;
-        color: #ffffff;
-        margin-bottom: 2em;
+        margin-bottom: 2rem;
     }
     .section-title {
-        font-size: 1.8em;
-        font-weight: bold;
-        margin-top: 2em;
-        color: #00ffcc;
+        font-size: 1.6em;
+        font-weight: 700;
+        margin-top: 2rem;
+        color: #00d1ff;
     }
     .content {
         font-size: 1.1em;
+        color: #e0f7ff;
         line-height: 1.6;
-        color: #e0e0e0;
     }
     .contact-box {
-        border: 1px solid #00ffcc;
+        border: 1px solid #00d1ff;
         padding: 1em;
-        border-radius: 10px;
+        border-radius: 8px;
         margin-top: 1em;
-        background-color: #111;
+        background-color: #132b44;
+    }
+    footer {
+        text-align: center;
+        font-size: 0.9em;
+        color: #aaa;
+        margin-top: 3rem;
+    }
+    hr {
+        border: 0;
+        border-top: 1px solid #2e4a67;
+        margin-top: 3rem;
     }
     </style>
 """, unsafe_allow_html=True)
 
 # --- Header ---
 st.markdown("<div class='title'>Rvivera Consulting</div>", unsafe_allow_html=True)
-st.markdown("<div class='subtitle'>Empowering Your Financial Future</div>", unsafe_allow_html=True)
+st.markdown("<div class='subtitle'>Advisory-First Stock Market Consulting Platform</div>", unsafe_allow_html=True)
 
-# --- Introduction ---
+# --- Intro ---
 st.markdown("""
 <div class='content'>
-Welcome to <b>Rvivera Consulting</b>, your trusted partner for personalized investment solutions. We specialize in:
+Welcome to <strong>Rvivera Consulting</strong>, your trusted partner for personalized investment strategies. We provide actionable, timely, and research-backed guidance for:
 <ul>
-    <li>📈 <b>Short-term Investments</b> in the Share Market</li>
-    <li>🏦 <b>Long-term Wealth Building</b> through smart stock strategies</li>
+    <li><strong>Short-term Investments</strong> – swing & intraday opportunities</li>
+    <li><strong>Long-term Wealth Planning</strong> – growth-oriented portfolios</li>
 </ul>
 </div>
 """, unsafe_allow_html=True)
@@ -68,8 +78,7 @@ Welcome to <b>Rvivera Consulting</b>, your trusted partner for personalized inve
 st.markdown("<div class='section-title'>About Us</div>", unsafe_allow_html=True)
 st.markdown("""
 <div class='content'>
-At Rvivera Consulting, we believe every investor deserves a clear, confident, and profitable journey.
-Founded by <b>Girish Joshi</b>, our mission is to simplify investment decisions through expert-backed consulting and actionable insights.
+Founded by <strong>Girish Joshi</strong>, Rvivera Consulting is built on the principles of discipline, transparency, and performance. We help new and experienced investors grow confidently in the Indian stock market.
 </div>
 """, unsafe_allow_html=True)
 
@@ -78,10 +87,8 @@ st.markdown("<div class='section-title'>Our Services</div>", unsafe_allow_html=T
 st.markdown("""
 <div class='content'>
 <ul>
-    <li>✅ <b>Short-Term Investment Consulting</b><br>
-        Timely stock insights, trade setups, and daily market updates.</li>
-    <li>🔒 <b>Long-Term Investment Planning</b><br>
-        Portfolio structuring, risk management, and compounding strategies.</li>
+    <li><strong>Short-Term Advisory:</strong> Daily trade ideas, setups, and exits based on technicals and sentiment analysis.</li>
+    <li><strong>Long-Term Investment Planning:</strong> Asset allocation, portfolio design, and compounding strategies for wealth creation.</li>
 </ul>
 </div>
 """, unsafe_allow_html=True)
@@ -92,14 +99,14 @@ st.markdown("""
 <div class='contact-box'>
 <b>Name:</b> Girish Joshi<br>
 <b>Phone:</b> 9322431827<br>
-<b>Address:</b> Uttam Nagar, Shivane, 411023
+<b>Address:</b> Uttam Nagar, Shivane, 411023<br>
 </div>
 """, unsafe_allow_html=True)
 
 # --- Footer ---
 st.markdown("""
-<hr style='margin-top: 3em; border: 0.5px solid #444;'>
-<div style='text-align: center; color: #888;'>
-Made with ❤️ using Streamlit
-</div>
+<hr>
+<footer>
+Copyright © 2025 Rvivera Consulting. All rights reserved. | Designed with ❤️ in India
+</footer>
 """, unsafe_allow_html=True)
