@@ -3,8 +3,12 @@ import streamlit as st
 # Set page config
 st.set_page_config(page_title="Rvivera Consulting", layout="wide")
 
-# Show logo
-st.image("ChatGPT Image Jul 2, 2025, 08_56_56 PM.png", width=140)
+# --- Top Navigation Header with Logo ---
+st.markdown("""
+    <div style="background-color:#ffffff; padding: 10px 30px; display: flex; align-items: center;">
+        <img src="https://raw.githubusercontent.com/rohit543215/streamlit_app.py/main/ChatGPT Image Jul 2, 2025, 08_56_56 PM.png" alt="Rvivera Logo" height="40">
+    </div>
+""", unsafe_allow_html=True)
 
 # --- Custom Styling ---
 st.markdown("""
@@ -62,7 +66,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- Header ---
+# --- Header Text ---
 st.markdown("<div class='title'>Rvivera Consulting</div>", unsafe_allow_html=True)
 st.markdown("<div class='subtitle'>Expert-Driven Stock Market Guidance | Invest Smarter. Grow Faster.</div>", unsafe_allow_html=True)
 
