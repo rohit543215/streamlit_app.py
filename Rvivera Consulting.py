@@ -35,6 +35,8 @@ st.markdown("""
     <div class="navbar">
         <img src="https://raw.githubusercontent.com/rohit543215/streamlit_app.py/main/ChatGPT Image Jul 2, 2025, 08_56_56 PM.png" alt="Rvivera Logo" height="40">
         <div class="nav-links">
+            <a href="#About">About</a>
+            <a href="#Services">Services</a>
             <a href="#Contact">Contact</a>
         </div>
     </div>
@@ -116,7 +118,9 @@ Welcome to <strong>Rvivera Consulting</strong>, where insights meet performance.
 st.markdown("<div class='section-title' id='About'>About Us</div>", unsafe_allow_html=True)
 st.markdown("""
 <div class='content'>
-Founded by <strong>Girish Joshi</strong>, Rvivera Consulting is a modern advisory firm helping individuals and small businesses make informed financial decisions in the stock market. With a blend of research, risk control, and strategy, we aim to simplify investing for all.
+Rvivera Consulting is founded on a passion for financial literacy and market precision. Our vision is to empower everyday investors with the right tools and insights to take charge of their financial future. 
+
+We understand that each individual’s journey is unique — that’s why we tailor our advisory services based on your goals, whether it's short-term momentum trading or building long-term portfolios.
 </div>
 """, unsafe_allow_html=True)
 
@@ -124,10 +128,12 @@ Founded by <strong>Girish Joshi</strong>, Rvivera Consulting is a modern advisor
 st.markdown("<div class='section-title' id='Services'>Our Services</div>", unsafe_allow_html=True)
 st.markdown("""
 <div class='content'>
+At Rvivera Consulting, we offer:
 <ul>
-    <li><strong>Daily Trade Setups</strong> – curated entries, stop-losses, and targets</li>
-    <li><strong>Long-Term Investment Plans</strong> – tax-efficient and diversified portfolio design</li>
-    <li><strong>One-on-One Consultations</strong> – personalized strategy discussions</li>
+    <li><strong>Short-Term Trading:</strong> High-potential intraday and swing trade ideas, daily technical setups, entry/exit alerts</li>
+    <li><strong>Long-Term Investments:</strong> Wealth-building strategies with asset allocation, rebalancing, and compounding insights</li>
+    <li><strong>1-on-1 Consultations:</strong> Personalized mentoring and guidance for traders, investors, and beginners</li>
+    <li><strong>Market Reports:</strong> Weekly market reviews, sector watchlists, and macro commentary</li>
 </ul>
 </div>
 """, unsafe_allow_html=True)
