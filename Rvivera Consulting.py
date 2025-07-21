@@ -71,6 +71,6 @@ st.markdown("""
 # --- Footer ---
 st.markdown("---")
 st.markdown(
-    "<div style='text-align:center; font-size:14px;'>© 2025 Rvivera Consulting | <a href='https://linkedin.com'>LinkedIn</a> | <a href='https://twitter.com'>Twitter</a></div>",
+    "<div style='text-align:center; font-size:14px;'>© 2025 Rvivera Consulting | <a href='https://www.linkedin.com/in/girish-joshi-539b94262/'>LinkedIn</a> | <a href='https://twitter.com'>Twitter</a></div>",
     unsafe_allow_html=True,
 )
