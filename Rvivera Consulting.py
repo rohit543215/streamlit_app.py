@@ -25,8 +25,9 @@ st.markdown(
 )
 st.markdown("<br>", unsafe_allow_html=True)
 
+# Consultation Button
 if st.button("📊 Request a Free Consultation"):
-    st.success("We will contact you shortly! Email us at contact@rviveraconsulting.com")
+    st.info("📧 Email: contact@rviveraconsulting.com | 📞 Phone: 9322431827")
 
 st.markdown("---")
 
@@ -57,26 +58,15 @@ st.write(
     """
 )
 
-# --- Contact Form ---
-st.markdown("---")
-st.markdown("## **Contact Us**")
-with st.form("contact_form"):
-    name = st.text_input("Name")
-    email = st.text_input("Email")
-    message = st.text_area("Your Message")
-    submitted = st.form_submit_button("Send Message")
-    if submitted:
-        st.success(f"Thank you {name}! We will reach out to you at {email}.")
-
 # --- Contact Info ---
-st.markdown(
-    """
-    **Name:** Girish Joshi  
-    **Phone:** 9322431827  
-    **Address:** Uttam Nagar, Shivane, 411023  
-    **Email:** [contact@rviveraconsulting.com](mailto:contact@rviveraconsulting.com)
-    """
-)
+st.markdown("---")
+st.markdown("## **Contact**")
+st.markdown("""
+**Name:** Girish Joshi  
+**Phone:** 9322431827  
+**Address:** Uttam Nagar, Shivane, 411023  
+**Email:** [contact@rviveraconsulting.com](mailto:contact@rviveraconsulting.com)
+""")
 
 # --- Footer ---
 st.markdown("---")
