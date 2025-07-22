@@ -65,7 +65,7 @@ st.markdown("""
 **Name:** Girish Joshi  
 **Phone:** 9322431827  
 **Address:** Uttam Nagar, Shivane, 411023  
-**Email:** [gj22615059@gmail.com.com](mailto:gj2615059@gmail.com.com)
+**Email:** [gj22615059@gmail.com](mailto:gj2615059@gmail.com)
 """)
 
 # --- Footer ---
