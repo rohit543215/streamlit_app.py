@@ -27,7 +27,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 
 # Consultation Button
 if st.button("📊 Request a Free Consultation"):
-    st.info("📧 Email: gj2615059@gmail.com.com | 📞 Phone: 9322431827")
+    st.info("📧 Email: gj2615059@gmail.com | 📞 Phone: 9322431837")
 
 st.markdown("---")
 
@@ -63,7 +63,7 @@ st.markdown("---")
 st.markdown("## **Contact**")
 st.markdown("""
 **Name:** Girish Joshi  
-**Phone:** 9322431827  
+**Phone:** 9322431837  
 **Address:** Uttam Nagar, Shivane, 411023  
 **Email:** [gj2615059@gmail.com](mailto:gj2615059@gmail.com)
 """)
