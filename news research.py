@@ -3,11 +3,10 @@ import streamlit as st
 import pickle
 import time
 
-from langchain.llms import OpenAI
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.document_loaders import UnstructuredURLLoader
-from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 
 # Streamlit UI
@@ -27,8 +26,12 @@ main_placeholder = st.empty()
 # Load API key securely from Streamlit Secrets
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 
-# Initialize LLM
-llm = OpenAI(temperature=0.9, max_tokens=500, openai_api_key=openai_api_key)
+# Initialize Chat LLM (instead of old OpenAI)
+llm = ChatOpenAI(
+    temperature=0.9,
+    max_tokens=500,
+    api_key=openai_api_key
+)
 
 if process_url_clicked:
     # Load data from URLs
@@ -45,7 +48,7 @@ if process_url_clicked:
     docs = text_splitter.split_documents(data)
 
     # Create embeddings & FAISS index
-    embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
+    embeddings = OpenAIEmbeddings(api_key=openai_api_key)
     vectorstore_openai = FAISS.from_documents(docs, embeddings)
     main_placeholder.text("Embedding Vector Started Building...✅✅✅")
     time.sleep(2)
