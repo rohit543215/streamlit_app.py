@@ -3,12 +3,14 @@ import streamlit as st
 import pickle
 import time
 
-from langchain_openai import OpenAI, OpenAIEmbeddings
+from langchain.llms import OpenAI
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.document_loaders import UnstructuredURLLoader
+from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 
+# Streamlit UI
 st.title("RockyBot: News Research Tool 📈")
 st.sidebar.title("News Article URLs")
 
@@ -29,10 +31,12 @@ openai_api_key = st.secrets["OPENAI_API_KEY"]
 llm = OpenAI(temperature=0.9, max_tokens=500, openai_api_key=openai_api_key)
 
 if process_url_clicked:
+    # Load data from URLs
     loader = UnstructuredURLLoader(urls=urls)
     main_placeholder.text("Data Loading...Started...✅✅✅")
     data = loader.load()
 
+    # Split data into chunks
     text_splitter = RecursiveCharacterTextSplitter(
         separators=['\n\n', '\n', '.', ','],
         chunk_size=1000
@@ -40,14 +44,17 @@ if process_url_clicked:
     main_placeholder.text("Text Splitter...Started...✅✅✅")
     docs = text_splitter.split_documents(data)
 
+    # Create embeddings & FAISS index
     embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
     vectorstore_openai = FAISS.from_documents(docs, embeddings)
     main_placeholder.text("Embedding Vector Started Building...✅✅✅")
     time.sleep(2)
 
+    # Save FAISS index
     with open(file_path, "wb") as f:
         pickle.dump(vectorstore_openai, f)
 
+# User query input
 query = main_placeholder.text_input("Question: ")
 
 if query:
@@ -60,9 +67,11 @@ if query:
             )
             result = chain({"question": query}, return_only_outputs=True)
 
+            # Display Answer
             st.header("Answer")
             st.write(result["answer"])
 
+            # Display Sources
             sources = result.get("sources", "")
             if sources:
                 st.subheader("Sources:")
