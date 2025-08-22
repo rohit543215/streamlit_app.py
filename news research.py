@@ -3,11 +3,10 @@ import streamlit as st
 import pickle
 import time
 
-from langchain_openai import OpenAI
+from langchain_openai import OpenAI, OpenAIEmbeddings
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.document_loaders import UnstructuredURLLoader
-from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 
 st.title("RockyBot: News Research Tool 📈")
@@ -23,11 +22,11 @@ file_path = "faiss_store_openai.pkl"
 
 main_placeholder = st.empty()
 
-# --- Your OpenAI API key here ---
-OPENAI_API_KEY = "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"
-# --------------------------------
+# Load API key securely from Streamlit Secrets
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 
-llm = OpenAI(temperature=0.9, max_tokens=500, openai_api_key=OPENAI_API_KEY)
+# Initialize LLM
+llm = OpenAI(temperature=0.9, max_tokens=500, openai_api_key=openai_api_key)
 
 if process_url_clicked:
     loader = UnstructuredURLLoader(urls=urls)
@@ -41,7 +40,7 @@ if process_url_clicked:
     main_placeholder.text("Text Splitter...Started...✅✅✅")
     docs = text_splitter.split_documents(data)
 
-    embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
+    embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
     vectorstore_openai = FAISS.from_documents(docs, embeddings)
     main_placeholder.text("Embedding Vector Started Building...✅✅✅")
     time.sleep(2)
@@ -55,7 +54,10 @@ if query:
     if os.path.exists(file_path):
         with open(file_path, "rb") as f:
             vectorstore = pickle.load(f)
-            chain = RetrievalQAWithSourcesChain.from_llm(llm=llm, retriever=vectorstore.as_retriever())
+            chain = RetrievalQAWithSourcesChain.from_llm(
+                llm=llm,
+                retriever=vectorstore.as_retriever()
+            )
             result = chain({"question": query}, return_only_outputs=True)
 
             st.header("Answer")
