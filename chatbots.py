@@ -18,7 +18,7 @@ user_input = st.text_input("Ask me anything...")
 
 if st.button("Send") and user_input.strip():
     data = {
-        "model": "deepseek/deepseek-v3.2-exp",  # Use desired model
+        "model": "deepseek-v3.2-exp",  # Use desired model
         "messages": [
             {"role": "user", "content": user_input}
         ],
